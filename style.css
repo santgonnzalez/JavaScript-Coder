@@ -1,0 +1,162 @@
+*{
+    text-align : center;
+    /* background-color: bisque; */
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background: #e96443;
+    font-size: 30px;
+}
+
+ul{
+    list-style: none;
+    padding: none;
+    margin: none;
+}
+
+span .resultado {
+    position: relative;
+    width: 100%;
+}
+
+.resultado-enter{
+    transition: .5s;
+}
+
+
+.resultado-enter .resultado-enter-active{
+    transform: translateY(0%);
+}
+
+
+.resultado-exit{
+    transform: translateY(0);
+    transition: .5s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.resultado-exit-active{
+    opacity: 0;
+    transform: translateY(-10%);
+}
+
+.container{
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+header{
+    background-color: rgb(173, 53, 53);
+    padding: 10px;
+    font-weight: bold;
+    color: #FFFF;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: solid 2px black;
+}
+
+header h1{
+    font-size: 2rem;
+    margin: 0;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    
+}
+
+.formulario{
+    background-color: rgb(173, 53, 53);
+    padding: 3rem;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.boton{
+    background-color: #00838f;
+    font-size: 16px;
+    width: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    box-sizing: border-box;
+    transition: background-color .3s ease;
+    margin-top: 2rem;
+}
+
+
+.boton:hover{
+    background-color: #26c5da;
+    cursor: pointer;
+}
+
+
+
+.error{
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.radio{
+    margin: 0 1.5rem;
+
+}
+
+select{
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: 1pc solid #e1e1e1;
+    -webkit-appearance: none;
+}
+
+label{
+    flex: 0 0 100px;
+}
+
+
+.campo{
+    display: felx;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.mensaje{
+    background-color: rgb(194, 173, 122);
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.divResultado{
+    text-align: center;
+    padding: .5rem;
+    border: 1pc solid rgb(194, 173, 122);
+    background-color: rgb(194, 173, 122);
+    margin-top: 1rem;
+    position: relative;
+}
+
+.textoCotizacion{
+    color: white;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+#resumen{
+    padding: 1rem;
+    text-align: center;
+    background-color: rgb(194, 173, 122);
+}
