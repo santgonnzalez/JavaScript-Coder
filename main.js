@@ -1,3 +1,13 @@
+let confirmacion = confirm(`Bienvenido al Cotizador de Vehiculos mas seguro!!
+Presiona Ok para continuar...`);
+console.log(confirmacion);
+
+if (confirmacion = true) {
+    alert("Comencemos...")
+} else {
+    alert("Te esperamos en otra oportunidad!");
+}
+
 const cotizarSeguro=()=>{
     let brand=document.querySelector("#brand").value;
     let year=document.querySelector("#year").value;
@@ -8,6 +18,47 @@ const cotizarSeguro=()=>{
 
     let divResumen=document.querySelector("#resumen");
     let divResultado=document.querySelector("#resultado");
+
+
+    // LocalStorage
+    let savedData = JSON.parse(localStorage.getItem('cotizacionData'));
+
+    
+    if (savedData) {
+        brand = savedData.brand;
+        year = savedData.year;
+        basico = savedData.basico;
+        intermedio = savedData.intermedio;
+        completo = savedData.completo;
+    }
+
+    
+    document.querySelector("#brand").value = brand;
+    document.querySelector("#year").value = year;
+    document.querySelector("#basico").checked = basico === 'true';
+    document.querySelector("#intermedio").checked = intermedio === 'true';
+    document.querySelector("#completo").checked = completo === 'true';
+
+    
+    const saveData = () => {
+        const data = {
+            brand: document.querySelector("#brand").value,
+            year: document.querySelector("#year").value,
+            basico: document.querySelector("#basico").checked,
+            intermedio: document.querySelector("#intermedio").checked,
+            completo: document.querySelector("#completo").checked
+        };
+
+        localStorage.setItem('cotizacionData', JSON.stringify(data));
+    };
+
+    document.querySelector("#brand").addEventListener('change', saveData);
+    document.querySelector("#year").addEventListener('change', saveData);
+    document.querySelector("#basico").addEventListener('change', saveData);
+    document.querySelector("#intermedio").addEventListener('change', saveData);
+    document.querySelector("#completo").addEventListener('change', saveData);
+
+
 
     // Mensaje de error
     const mostrarError=(elemento, mensaje)=>{ 
