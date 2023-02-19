@@ -4,59 +4,22 @@ console.log(confirmacion);
 
 if (confirmacion = true) {
     alert("Comencemos...")
-} else {
-    alert("Te esperamos en otra oportunidad!");
 }
 
 const cotizarSeguro=()=>{
+    // Recuperar datos del localStorage o establecerlos como un objeto vacío
+    let cotizaciones = JSON.parse(localStorage.getItem("cotizaciones")) || {};
+
     let brand=document.querySelector("#brand").value;
     let year=document.querySelector("#year").value;
-    let basico=document.querySelector("#basico").value;
+    let basico=document.querySelector("#basico");
     let intermedio=document.querySelector("#intermedio");
     let completo=document.querySelector("#completo");
-
+    let confirmar=document.querySelector("#btn-confirmar");
 
     let divResumen=document.querySelector("#resumen");
     let divResultado=document.querySelector("#resultado");
 
-
-    // LocalStorage
-    let savedData = JSON.parse(localStorage.getItem('cotizacionData'));
-
-    
-    if (savedData) {
-        brand = savedData.brand;
-        year = savedData.year;
-        basico = savedData.basico;
-        intermedio = savedData.intermedio;
-        completo = savedData.completo;
-    }
-
-    
-    document.querySelector("#brand").value = brand;
-    document.querySelector("#year").value = year;
-    document.querySelector("#basico").checked = basico === 'true';
-    document.querySelector("#intermedio").checked = intermedio === 'true';
-    document.querySelector("#completo").checked = completo === 'true';
-
-    
-    const saveData = () => {
-        const data = {
-            brand: document.querySelector("#brand").value,
-            year: document.querySelector("#year").value,
-            basico: document.querySelector("#basico").checked,
-            intermedio: document.querySelector("#intermedio").checked,
-            completo: document.querySelector("#completo").checked
-        };
-
-        localStorage.setItem('cotizacionData', JSON.stringify(data));
-    };
-
-    document.querySelector("#brand").addEventListener('change', saveData);
-    document.querySelector("#year").addEventListener('change', saveData);
-    document.querySelector("#basico").addEventListener('change', saveData);
-    document.querySelector("#intermedio").addEventListener('change', saveData);
-    document.querySelector("#completo").addEventListener('change', saveData);
 
 
 
@@ -93,16 +56,15 @@ const cotizarSeguro=()=>{
     let cotizacion={brand,year,plan};
     document.querySelector("#msj").style.display="none";
 
-        
+    
 
-    // divResumen.style.backgroundColor="#FFFF";
+    // Spinner de carga
     divResumen.style.display= "block";
     
     divResumen.innerHTML=`<div style="text-align: center">
                             <img src="./spinner.gif" width=150px height=150px />
                             </div>`;
         setTimeout(()=>{
-            // divResumen.style.backgroundColor="#FFFF";
             divResumen.innerHTML=` 
                                     <h2> Resumen de cotizacion </h2>
                                     <ul>
@@ -114,9 +76,10 @@ const cotizarSeguro=()=>{
         let cotizacionFinal= cotizar(cotizacion);
         divResultado.style.display="block";
         divResultado.className="divResultado";
-        divResultado.innerHTML= `<p class="textoCotizacion"> $ ${cotizacionFinal} </p>`;
-        },3000);
-
+        divResultado.innerHTML= `<p class="textoCotizacion"> Monto final:  $${cotizacionFinal} </p>`;
+    },3000);
+    
+    
 
         const cotizar=(cotizacion)=>{
             const {brand,year,plan}=cotizacion;
@@ -129,8 +92,25 @@ const cotizarSeguro=()=>{
             const incrementPlan=obtenerPlan(plan);
 
             result=parseFloat(incrementPlan*result).toFixed(2);
+        
             return result;
+        
         }
+
+        // guardar datos en localStorage
+        let cotizacionData = {
+        cotizacion: {
+        marca: mayuscula(brand),
+        plan: mayuscula(plan),
+        year: mayuscula(year),
+        cotizacionFinal: cotizacion
+        }
+        };
+        
+        localStorage.setItem("cotizacion", JSON.stringify(cotizacionData));
+
+        confirmar.style.display="block";
+        confirmar.innerHTML="Confirmar";
 
         const diferencia=(year)=>{
             return new Date().getFullYear() -year;
@@ -161,5 +141,16 @@ const cotizarSeguro=()=>{
         }
 
 
-
+        document.querySelector("#btn-confirmar").addEventListener("click", () => {
+            confirmar.style.display="block";
+            let cotizacionData = JSON.parse(localStorage.getItem("cotizacion"));
+            if (cotizacionData) {
+            alert(
+                `Cotización confirmada:\nMarca: ${cotizacionData.cotizacion.marca}\nPlan: ${cotizacionData.cotizacion.plan}\nAño del auto: ${cotizacionData.cotizacion.year}\nMonto: ${cotizacionData.cotizacion.cotizacion}`
+            );
+            localStorage.removeItem("cotizacion");
+            } else {
+            alert("No hay cotizaciones guardadas");
+            }
+        });
 }

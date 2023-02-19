@@ -1,13 +1,12 @@
 *{
     text-align : center;
-    /* background-color: bisque; */
     box-sizing: border-box;
 }
 
 
 
 body {
-    background: #e96443;
+    background: #6096B4;
     font-size: 30px;
 }
 
@@ -52,10 +51,10 @@ span .resultado {
 }
 
 header{
-    background-color: rgb(173, 53, 53);
+    background-color: #BDCDD6;
     padding: 10px;
     font-weight: bold;
-    color: #FFFF;
+    color: black;
     border-radius: 10px;
     margin-bottom: 10px;
     border: solid 2px black;
@@ -70,7 +69,7 @@ header h1{
 }
 
 .formulario{
-    background-color: rgb(173, 53, 53);
+    background-color: #BDCDD6;
     padding: 3rem;
     border-radius: 10px;
     border: solid 2px black;
@@ -98,8 +97,8 @@ header h1{
 
 
 .error{
-    background-color: red;
-    color: white;
+    background-color: #E97777;
+    color:#EEE9DA;
     padding: 1rem;
     width: 100%;
     text-align: center;
@@ -130,8 +129,10 @@ label{
     align-items: center;
 }
 
+
+
 .mensaje{
-    background-color: rgb(194, 173, 122);
+    background-color: #93BFCF;
     margin-top: 2rem;
     padding: 1rem;
     text-align: center;
@@ -140,14 +141,14 @@ label{
 .divResultado{
     text-align: center;
     padding: .5rem;
-    border: 1pc solid rgb(194, 173, 122);
-    background-color: rgb(194, 173, 122);
+    border: 1pc solid #93BFCF;
+    background-color: #93BFCF;
     margin-top: 1rem;
     position: relative;
 }
 
 .textoCotizacion{
-    color: white;
+    color:#EEE9DA;
     padding: 1rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -158,5 +159,21 @@ label{
 #resumen{
     padding: 1rem;
     text-align: center;
-    background-color: rgb(194, 173, 122);
+    background-color: #93BFCF;
+}
+
+#confirmacion{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: .5rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#completo, #intermedio, #basico{
+    text-align: center;
+    padding: .5rem;
+    margin: 0;
+    font-size: 5px;
 }

@@ -23,8 +23,8 @@
                 </select>
             </div>
             <div class="camp">
-                <label>Anio</label>
-                <select name="year" id="year">
+                <label>Año</label>
+                <select name="year" id="year">  
                     <option value="">--Seleccione--</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
@@ -56,44 +56,47 @@
             </div>
 
             <div class="campo">
-                <label>Plan</label>
+                <label>Plan a elegir: </label>
+                <br>
                 <input 
                     type="radio"
                     name="plan"
                     value="basico"
                     class="radio"
                     id="basico"
-                    />
+                    />Basico
                 <input 
                     type="radio"
                     name="plan"
                     value="intermedio"
                     class="radio"
                     id="intermedio"
-                    />
+                    />Intermedio
                 <input 
                     type="radio"
                     name="plan"
                     value="completo"
                     class="radio"
                     id="completo"
-                    />
+                    />Completo
             </div>
             <input type="button" onclick="cotizarSeguro()" class="button-primary u-full-width" value="cotizar"/>
         </form>
-        <div class="mensaje" id="msj">Elige marca,anio y tipo de seguro</div>
+        <div class="mensaje" id="msj">Elige marca, año y tipo de seguro</div>
 
         <!-- Display none, para que esten ocultos hasta que toque el boton de cotizar y ahi les cambio el display a block.  -->
         <div id="resumen" style="display: none">
 
         </div>
         <div id="resultado" style="display: none">
-
+        </div>
+        <div id="confirmacion">
+        <button id="btn-confirmar" style="display: none">Confirmar</button>
         </div>
     </div>
     </div>
 
 
-<script src="./main.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
