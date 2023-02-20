@@ -87,6 +87,12 @@ header h1{
     transition: background-color .3s ease;
     margin-top: 2rem;
 }
+#btn-confirmar{
+    background-color:#00838f;
+}
+#btn-confirmar{
+    background-color:#26c5da
+}
 
 
 .boton:hover{
