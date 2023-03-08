@@ -75,6 +75,13 @@ header h1{
     border: solid 2px black;
 }
 
+/* .correo{
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: solid 1px black;
+} */
+
 .boton{
     background-color: #00838f;
     font-size: 16px;
@@ -144,13 +151,24 @@ label{
     text-align: center;
 }
 
-.divResultado{
+#resultado{
     text-align: center;
     padding: .5rem;
     border: 1pc solid #93BFCF;
     background-color: #93BFCF;
     margin-top: 1rem;
     position: relative;
+    border: 1px solid black
+}
+
+
+#correo{
+    padding: 1rem;
+    text-align: center;
+    background-color: #93BFCF;
+    margin-top: 1.5rem;
+    position: relative;
+    border: 1px solid black
 }
 
 .textoCotizacion{
@@ -159,6 +177,7 @@ label{
     text-transform: uppercase;
     font-weight: bold;
     margin: 0;
+    
 }
 
 
@@ -166,6 +185,7 @@ label{
     padding: 1rem;
     text-align: center;
     background-color: #93BFCF;
+    border: 1px solid black
 }
 
 #confirmacion{
@@ -175,6 +195,7 @@ label{
     padding: .5rem;
     margin-top: 1rem;
     position: relative;
+    
 }
 
 #completo, #intermedio, #basico{

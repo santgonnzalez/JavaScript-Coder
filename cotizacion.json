@@ -1,0 +1,41 @@
+{
+    "cotzaciones":[
+        {
+        "id":1,
+        "marca":"americano" ,
+        "plan":"intermedio",
+        "year": 2012 ,
+        "cotizacionFinal": 2351.70
+        },
+        {
+        "id":2,
+        "marca":"asiatico" ,
+        "plan":"intermedio",
+        "year": 2016 ,
+        "cotizacionFinal": 2259.40
+        },
+        {
+        "id":3,
+        "marca":"europeo" ,
+        "plan":"completo",
+        "year": 1999 ,
+        "cotizacionFinal": 1260.00
+        },
+        {
+        "id":4,
+        "marca":"americano" ,
+        "plan":"basico",
+        "year": 2002 ,
+        "cotizacionFinal": 1198.80
+        },
+        {
+        "id":5,
+        "marca":"asiatico" ,
+        "plan":"completo",
+        "year": 2018 ,
+        "cotizacionFinal": 2805.00
+        }
+        
+        
+    ]
+}
